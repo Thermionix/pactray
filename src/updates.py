@@ -3,7 +3,6 @@
 import subprocess
 import os
 from conf import Configuration
-from tray import TrayIcon
 
 class UpdateChecker:
 	updatesList=[]
@@ -27,10 +26,9 @@ class UpdateChecker:
 			self.updatesList.extend(output_lines)
 
 	def run_check(self, trayIcon):
-		print("pactray checking updates")
 		self.updatesList=[]
 		self.check_pacman()
 		self.check_cower()
-		print("pactray updates checked")
-		trayIcon.update_status_icon(self.updatesList)
+		print("pactray updates count: " + str(len(self.updatesList)))
+		trayIcon.update_status(self.updatesList)
 

@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
 from gi.repository import Gtk, Notify
+import subprocess
 from conf import Configuration
+from updates import UpdateChecker
 
 class Notifications():
 	def __init__(self):
@@ -29,16 +31,16 @@ class TrayIcon():
 		update_cmd=Configuration().read().get('global', 'update_cmd')
 		if update_cmd:
 			print("executing " + update_cmd)
-			# subprocess launch update_cmd
-			self.status_icon.set_visible(False)
-			# pause check_updates till subprocess exits?
-			# run check_updates once subprocess exits?
+			ps = subprocess.Popen(update_cmd, shell=True)
+			retcode = ps.wait()
+			print("exited: " + str(retcode))
+			UpdateChecker().run_check(self)
 
 	def on_left_click(self, event):
 		notification = Notifications()
 		notification.Show(self.updatesList)
 
-	def update_status_icon(self, updatesList):
+	def update_status(self, updatesList):
 		self.updatesList=updatesList
 		if len(updatesList) > 0: 
 			self.status_icon.set_visible(True)

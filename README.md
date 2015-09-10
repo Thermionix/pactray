@@ -10,5 +10,5 @@ sample configuration
 `~/.config/pactray.conf`
 ````
 [global]
-update_cmd=/usr/bin/mate-terminal -e "pacaur -Syu"
+update_cmd=/usr/bin/mate-terminal --disable-factory -e "pacaur -Syu"
 ````
