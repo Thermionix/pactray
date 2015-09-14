@@ -28,12 +28,13 @@ class TrayIcon():
 		self.status_icon.set_visible(False)
 
 	def on_right_click(self, icon, button, time):
-		update_cmd=Configuration().read().get('global', 'update_cmd')
-		if update_cmd:
+		if Configuration().read().has_option('global', 'update_cmd'):
+			update_cmd=Configuration().read().get('global', 'update_cmd')
 			print("executing " + update_cmd)
 			ps = subprocess.Popen(update_cmd, shell=True)
 			retcode = ps.wait()
 			print("exited: " + str(retcode))
+			#self.status_icon.set_visible(False)
 			UpdateChecker().run_check(self)
 
 	def on_left_click(self, event):

@@ -14,7 +14,7 @@ if __name__ == '__main__':
 	checker = UpdateChecker()
 
 	#update_interval = int(Configuration().read().get('global', 'update_interval')) * 60
-	update_interval = 60
+	update_interval = 5 * 60
 
 	def check():
 		checker.run_check(trayIcon)

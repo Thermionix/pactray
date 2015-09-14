@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+GenericName=Pacman Updater (pactray)
+Comment=update notifier for Arch Linux (pactray)
+Name=pactray
+Exec=pactray
+Icon=/usr/share/pactray/archlogo.svg
+Type=Application
+Terminal=false
+Categories=Application;System;
+Name[en_AU]=pactray

@@ -11,8 +11,7 @@ class Configuration:
 	conf_options = {'global' : {
 					'update_interval': '120',
 					'notification_timeout': '10',
-					'icon_file': (path.join(path.abspath(path.curdir),"archlogo.png")),
-					'update_cmd': '/usr/bin/xterm -e "sudo pacman -Syu"'
+					'icon_file': (path.join(path.abspath(path.curdir),"archlogo.png"))
 					}}
 					# pacman_check_cmd ["/usr/bin/checkupdates"]
 					# aur_check_cmd ["/usr/bin/cower","-u"]
