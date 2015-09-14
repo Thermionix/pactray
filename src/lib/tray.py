@@ -2,8 +2,8 @@
 
 from gi.repository import Gtk, Notify
 import subprocess
-from conf import Configuration
-from updates import UpdateChecker
+from pactray.conf import Configuration
+from pactray.updates import UpdateChecker
 
 class Notifications():
 	def __init__(self):

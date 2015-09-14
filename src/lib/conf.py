@@ -11,8 +11,9 @@ class Configuration:
 	conf_options = {'global' : {
 					'update_interval': '120',
 					'notification_timeout': '10',
-					'icon_file': (path.join(path.abspath(path.curdir),"archlogo.png"))
+					'icon_file': '/usr/share/pactray/archlogo.png'
 					}}
+					# (path.join(path.abspath(path.curdir),''))
 					# pacman_check_cmd ["/usr/bin/checkupdates"]
 					# aur_check_cmd ["/usr/bin/cower","-u"]
 					# aur_output_regex

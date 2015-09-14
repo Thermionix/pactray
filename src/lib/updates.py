@@ -2,7 +2,7 @@
 
 import subprocess
 import os
-from conf import Configuration
+from pactray.conf import Configuration
 
 class UpdateChecker:
 	updatesList=[]
