@@ -5,11 +5,13 @@ Pactray is a small notifier for Arch Linux (pacman) updates.
 
 ![pactray-2](https://cloud.githubusercontent.com/assets/622615/9778070/f6241ff6-57ae-11e5-886f-84bb84102e6e.png)
 
-Pactray is a python process which runs in the background, checking system updates with `checkupdates` and `cower -u`
+Pactray is a python process which runs in the background,
+checking system updates with `checkupdates` and `cower -u`
 
 When updates are available an icon is shown in the system tray.
 
 Left clicking the icon will show a notification of the available updates
+
 Right clicking will execute update_cmd (if configured)
 
 default configuration
