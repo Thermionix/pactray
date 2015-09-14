@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 from distutils.core import setup
-import glob
 
 setup(name='pactray',
       version='0.1',
@@ -10,10 +9,9 @@ setup(name='pactray',
       author=['Thermionix'],
       author_email=['thermionix@gmail.com'],
       url='https://github.com/Thermionix/pactray',
-      package_dir={'pactray':'src/'},
+      package_dir={'pactray':'src/lib/'},
       packages=['pactray'],
-      data_files=[('share/pactray/', ['src/archlogo.png', 'src/archlogo.svg']),
-                  ('share/applications', ['pactray.desktop']),
-                  ]
+      data_files=[('share/pactray/', ['src/share/archlogo.png', 'src/share/archlogo.svg']),
+                  ('share/applications', ['src/pactray.desktop'])]
 )
 

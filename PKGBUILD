@@ -9,13 +9,11 @@ license=('GPL')
 url=""
 depends=('pacman' 'python-gobject')
 optdepends=('cower: check aur packages')
-source=('pactray.py' 'archlogo.png')
-md5sums=('')
+source=()
+md5sums=()
 
 build() {
-	mkdir -p ${pkgdir}/usr/bin
-
-	cp -f ${srcdir}/pactray.py ${pkgdir}/usr/bin/pactray
-
-	chmod -R 755 ${pkgdir}/
+	python setup.py build
+	python setup.py install --prefix=${pkgdir}/usr
 }
+
