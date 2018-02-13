@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-
+import gi
+gi.require_version('Notify', '0.7')
 from gi.repository import Gtk, Notify
 import subprocess
 from pactray.conf import Configuration
