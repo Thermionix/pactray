@@ -11,11 +11,11 @@ class UpdateChecker:
 		pacman_output = subprocess.check_output(["/usr/bin/checkupdates"])
 		self.append_to_list(pacman_output)
 
-	def check_cower(self):
+	def check_auracle(self):
 		try:
-			ps = subprocess.Popen(["/usr/bin/cower","-u"], stdout=subprocess.PIPE)
-			cower_output = ps.communicate()[0]
-			self.append_to_list(cower_output)
+			ps = subprocess.Popen(["/usr/bin/auracle","sync"], stdout=subprocess.PIPE)
+			auracle_output = ps.communicate()[0]
+			self.append_to_list(auracle_output)
 		except OSError as e:
 			if not e.errno == os.errno.ENOENT:
 				raise
@@ -28,7 +28,7 @@ class UpdateChecker:
 	def run_check(self, trayIcon):
 		self.updatesList=[]
 		self.check_pacman()
-		self.check_cower()
+		self.check_auracle()
 		print("pactray updates count: " + str(len(self.updatesList)))
 		trayIcon.update_status(self.updatesList)
 
